@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Almacenamiento Local con HTML5</title>
+    <style>
+        *{
+            font-family: Helvetica;
+        }
+    </style>
+<script>
+//Programaremos ingresar un texto, guardarlo y al hacer click
+//el boton "ver datos", aparece en el cuadro "texto recuperado"
+function guardar(){
+//en "texto" guardaremos todo lo que eescribamos en el cuadro
+    var texto = document.getElementById("texto_a_guardar").value;
+    localStorage.setItem("texto_a_guardar", texto);
+}
+
+//Funcion VER DATOS
+function ver_Dato(){
+    document.getElementById("texto_recuperado").value = localStorage.getItem("texto_a_guardar");
+}
+
+
+
+</script>
+</head>
+<body>
+    <h1>Almacenamiento Local con HTML5</h1>
+    <label>Ingrese un texto</label><br>
+    <input type="text" id="texto_a_guardar"><br>
+    <label>Texto Recuperado</label><br>
+    <input type="text" id="texto_recuperado"><br>
+    <input type="button" value="Guardar" onclick="guardar();">
+    <input type="button" value="Ver_Datos" onclick="ver_Dato();">
+</body>
+</html>
